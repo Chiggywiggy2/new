@@ -1,0 +1,48 @@
+
+var isPalindrome = function(x) {
+    
+    if(x<0){
+        return false;
+    }
+    
+    
+  let text = x.toString();
+
+  var check1 = [];
+  for (var i =0 ; i<text.length ; i++){
+    check1[i]=text[i];
+  }
+
+  var check2 = [];
+
+  for(var i =text.length - 1 ; i>=0;i--){
+    // Logger.log(text[i]);
+    check2[i]=text[i];
+  }
+
+  var answer =[];
+
+  for (var i=0;i<check1.length;i++){
+    var flag = true;
+    if(check1[i] != check2[i]){
+      flag = false;
+      break;
+    }
+    if(flag == true){
+      answer.push('palindrome');
+    }
+    else{
+      answer.push('not a palindrome')
+    }
+  }
+    
+  const isInArray = answer.includes('not a palindrome');
+
+  if(isInArray == false){
+    return true;
+  }
+  else{
+    return false;
+  }
+    
+};
