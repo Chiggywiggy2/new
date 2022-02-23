@@ -1,0 +1,36 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var findErrorNums = function(nums) {
+  var len = nums.length;
+  var ans2 =[]
+
+  // var ans = Array.from(Array(len+1).keys());
+
+  function range(start, end) {
+  return Array(end - start + 1).fill().map((_, idx) => start + idx)
+  }
+  var ans = range(1, len); // [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+
+
+  for(var i =0; i<nums.length;i++){
+    for(var j =nums.length ; j>i;j--){
+      if(nums[i]==nums[j]){
+        ans2.push(nums[j]);
+      }
+    }
+  }
+
+
+  for(var i = ans.length-1; i>=0;i--){
+    for(var j = 0; j<nums.length;j++){
+      if(ans[i]==nums[j]){
+        ans.splice(i,1);
+      }
+    }
+  }
+  ans2.push(ans);
+  return ans2;
+    
+};

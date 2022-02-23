@@ -1,0 +1,32 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    
+//     var nums2=[];
+    
+//     for(var i =0; i<nums.length ; i++){
+//         nums2[i] = nums[i];
+//     }
+
+  var count =0;
+
+
+  // var dups = [];
+
+  for (var i =0; i<nums.length ; i++){
+    for (var j=nums.length ; j>i ; j--){
+      if(nums[i]==nums[j]){
+        nums.splice(i,1);
+        // dups.push('_')
+        count = count +1;
+      }
+    }
+  }
+  // var ans = nums2.concat(dups);
+    
+    console.log(nums);
+
+    
+};
