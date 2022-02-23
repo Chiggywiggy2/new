@@ -1,0 +1,20 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var missingNumber = function(nums) {
+
+  var len = nums.length;
+
+  var ans = Array.from(Array(len+1).keys());
+
+  for(var i =ans.length;i>=0;i--){
+    for(var j = 0; j<len ;j++){
+      if(ans[i]==nums[j]){
+        ans.splice(i,1);
+      }
+    }
+  }
+  return ans;
+    
+};

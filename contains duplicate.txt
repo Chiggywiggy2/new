@@ -1,0 +1,17 @@
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+    
+    var ans =[];
+    ans = nums.sort();
+    
+    for (var i =0; i<ans.length ; i++){
+        if (ans[i] == ans[i+1]){
+            return true;
+        }
+    }
+    return false;
+
+};

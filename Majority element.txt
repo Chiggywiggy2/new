@@ -1,0 +1,26 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    
+      var len = nums.length;
+  var checking = len/2;
+
+  var ans = [];
+
+
+const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+
+for(var i =0; i<nums.length;i++){
+  if(countOccurrences(nums, nums[i]) > checking){
+    ans.push(nums[i]);
+  }
+}
+
+// var arr = ["a", "a", "b"];
+var uniqueSet = new Set(ans); // {"a", "b"}
+var uniqueArr = Array.from(uniqueSet);
+return uniqueArr;
+    
+};

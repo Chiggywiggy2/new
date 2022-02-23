@@ -1,0 +1,21 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findDuplicate = function(nums) {
+    
+  var len = nums.length;
+  var ans = [];
+
+  for(var i =0; i<len ;i++){
+    if(ans.length==0){
+      for(var j =i+1 ; j<len;j++){
+          if(nums[i]==nums[j]){
+            ans.push(nums[i]);
+            break;           
+            }
+          }
+        }
+      }
+    return ans;
+};
