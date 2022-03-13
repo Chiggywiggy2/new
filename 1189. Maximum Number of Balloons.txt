@@ -1,0 +1,22 @@
+var maxNumberOfBalloons = function(text) {
+     var b = Math.trunc((text.match(/b/g) || []).length);
+
+
+    var a = Math.trunc((text.match(/a/g) || []).length);
+
+
+    var l = Math.trunc((text.match(/l/g) || []).length / 2);
+
+
+    var o = Math.trunc((text.match(/o/g) || []).length / 2);
+
+
+    var n = Math.trunc((text.match(/n/g) || []).length);
+
+
+    var arr = [b, a, l, l, o, n];
+
+    arr.sort((a,b) => a-b);
+
+    return arr[0];
+};

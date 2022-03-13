@@ -1,0 +1,29 @@
+var stringMatching = function(words) {
+    
+       // console.log(words);
+
+    var copywords = [];
+    copywords.push(...words);
+    //console.log(copywords);
+
+    var ans = [];
+
+    for (var i = 0; i < copywords.length; i++) {
+        for (var j = 0; j < copywords.length; j++) {
+            if (words[j] == copywords[i]) {
+                continue;
+            }
+            if (words[j].includes(copywords[i])) {
+                ans.push(copywords[i])
+            }
+        }
+    }
+   // return ans;
+    
+        var sett = new Set(ans);
+    //console.log(sett);
+
+    var finalans = [...sett];
+    return finalans;
+    
+};

@@ -1,0 +1,28 @@
+var isPrefixOfWord = function(sentence, searchWord) {
+
+
+    var [first, ...others] = sentence.split(' ');
+    //console.log(first, others);
+
+    var arr = [];
+    arr.push(first);
+    arr.push(...others);
+
+    //console.log(arr);
+
+    for (var i = 0; i < arr.length; i++) {
+        var ans = 0;
+
+        console.log(arr[i]);
+        if (arr[i].startsWith(searchWord)) {
+            ans = ans + i + 1;
+            break;
+        }
+    }
+    if (ans == 0) {
+        return -1;
+    }
+    else {
+        return ans;
+    }
+};

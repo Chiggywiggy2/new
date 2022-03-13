@@ -1,0 +1,46 @@
+/**
+ * @param {string[]} words1
+ * @param {string[]} words2
+ * @return {number}
+ */
+var countWords = function(words1, words2) {
+        var arr = [];
+    var arr2 = [];
+    const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+
+
+    for (var i = 0; i < words1.length; i++) {
+        var a = countOccurrences(words1, words1[i]);
+        if (a == 1) {
+            arr.push(words1[i]);
+        }
+        //console.log(a);
+    }
+    //console.log(arr);
+
+    for (var i = 0; i < words2.length; i++) {
+        var a = countOccurrences(words2, words2[i]);
+        if (a == 1) {
+            arr2.push(words2[i]);
+        }
+        //console.log(a);
+    }
+    //console.log(arr2);
+
+    var merged = [];
+    merged.push(...arr);
+    merged.push(...arr2);
+
+    //console.log(merged);
+
+    var finalanswer = [];
+
+    for (var i = 0; i < merged.length; i++) {
+        var a = countOccurrences(merged, merged[i]);
+        if (a == 2) {
+            finalanswer.push(merged[i]);
+        }
+    }
+
+    return finalanswer.length / 2;
+};

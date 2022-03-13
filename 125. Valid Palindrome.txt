@@ -1,0 +1,27 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+       
+    
+    function reverse(st) {
+        return st.split("").reverse().join("");
+    }
+
+    s = s.replace(/[^a-zA-Z0-9]/g, '');
+    //console.log(s);
+
+    s = s.toLowerCase();
+    //console.log(s);
+
+    var opp = reverse(s);
+    //console.log(opp);
+
+    if (opp == s) {
+        return true;
+    }
+    else {
+        return false;
+    }
+};

@@ -1,0 +1,25 @@
+var rotateString = function(s, goal) {
+    
+
+    for (var i = 0; i < s.length - 1; i++) {
+        var sach = 0;
+        var [first, ...rest] = s;
+        var newstr = [...rest, first].join();
+
+        //console.log(newstr);
+        var joined = newstr.replace(/,/g, '');
+
+        if (joined == goal) {
+            sach = 1;
+            break;
+        }
+        s = joined;
+    }
+    if (sach == 0) {
+        return false;
+    }
+    else {
+        return true;
+    }
+    
+};

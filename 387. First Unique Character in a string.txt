@@ -1,0 +1,46 @@
+// ANS 1 =
+
+
+    let map ={};
+for(let i = 0; i < s.length; i++) {
+    if(map[s[i]] == undefined) {
+        map[s[i]] = true;
+    } else {
+        map[s[i]] = false;
+    }
+}
+
+for(let i = 0; i < s.length; i++) {
+    if(map[s[i]] == true) {
+        return i;
+    }
+}
+
+return -1;
+
+
+
+
+// ANS 2 = 
+
+var firstUniqChar = function (s) {
+
+    var ans = s;
+
+    var output = -1;
+
+    for (var i = 0; i < ans.length; i++) {
+        var [...spreading] = s;
+        //console.log(spreading);
+        //console.log('------------assignment-------------');
+        spreading.splice(i, 1);
+        //console.log(spreading);
+
+        if (!spreading.includes(ans[i])) {
+            output = i;
+            break;
+        }
+    }
+    return output;
+
+};

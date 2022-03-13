@@ -1,0 +1,28 @@
+/**
+ * @param {string[]} words
+ * @return {string}
+ */
+var firstPalindrome = function(words) {
+        function reverse(st) {
+        return st.split("").reverse().join("");
+    }
+    var arr = []
+
+    for (var i = 0; i < words.length; i++) {
+        //console.log(words[i]);
+        var a = reverse(words[i]);
+        //console.log(a);
+
+        if (a == words[i]) {
+            arr.push(words[i]);
+            break;
+        }
+    }
+    if (arr.length > 0) {
+
+        return arr[0];
+    }
+    else {
+        return "";
+    }
+};

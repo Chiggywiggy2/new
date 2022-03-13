@@ -1,0 +1,29 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var countGoodSubstrings = function(s) {
+        var arr = [];
+    function checkForUnique(str) {
+        var hashtable = {};
+        for (var i = 0, len = str.length; i < len; i++) {
+            if (hashtable[str[i]] != null) {
+                hashtable[str[i]] = 1;
+                return false;
+            } else {
+                hashtable[str[i]] = 0;
+            }
+        }
+        return true;
+    }
+
+    for (var i = 0; i < s.length - 2; i++) {
+        j = i + 3;
+        var sub = s.substring(i, j);
+        if (checkForUnique(sub)) {
+            arr.push(sub);
+        }
+    }
+
+    return arr.length;
+};

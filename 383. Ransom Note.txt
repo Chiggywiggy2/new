@@ -1,0 +1,32 @@
+var canConstruct = function(ransomNote, magazine) {
+    
+      var arr = [];
+    arr.push(...ransomNote);
+    //console.log(arr);
+
+    var arr2 = [];
+    arr2.push(...magazine);
+    //console.log(arr2);
+    var count = 0;
+    var ans = arr.length;
+
+    for (var i = arr.length - 1; i >= 0; i--) {
+        console.log(arr[i]);
+        for (var j = 0; j < arr2.length; j++) {
+            if (arr[i] == arr2[j]) {
+                count = count + 1;
+                arr.splice(i, 1);
+                arr2.splice(j, 1);
+            }
+        }
+    }
+
+    if (count == ans) {
+        return true;
+    }
+    else {
+        return false;
+    }
+
+    
+};

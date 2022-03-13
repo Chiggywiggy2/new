@@ -1,0 +1,35 @@
+var findMedianSortedArrays = function(nums1, nums2) {
+    
+    //console.log(nums1, nums2);
+
+    nums1.push(...nums2);
+   // console.log(nums1);
+
+    function sortNumber(a, b) {
+        return a - b;
+    }
+    nums1.sort(sortNumber);
+   // console.log(nums1);
+
+    var median;
+    var sum = 0;
+
+    for (var i = 0; i < nums1.length; i++) {
+        sum = sum + nums1[i];
+    }
+
+    if (nums1.length <= 2) {
+        median = (sum / nums1.length);
+    }
+
+    if (nums1.length % 2 != 0) {
+        median = nums1[Math.trunc(nums1.length / 2)];
+    }
+
+    else {
+        median = ((nums1[(nums1.length / 2)] + nums1[(nums1.length / 2) - 1]) / 2);
+    }
+    return median;
+
+    
+};

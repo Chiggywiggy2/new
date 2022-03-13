@@ -1,0 +1,28 @@
+/**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {string[]}
+ */
+var uncommonFromSentences = function(s1, s2) {
+        const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+
+    var s1Split = (s1.split(" "));
+    var s2Split = (s2.split(" "));
+
+    var arr = [];
+    arr.push(...s1Split);
+    arr.push(...s2Split);
+
+    //console.log(arr);
+
+    var ans = [];
+
+    for (var i = 0; i < arr.length; i++) {
+        var a = countOccurrences(arr, arr[i]);
+        //console.log(a);
+        if (a == 1) {
+            ans.push(arr[i])
+        }
+    }
+    return ans;
+};
