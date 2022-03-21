@@ -1,0 +1,15 @@
+var pivotIndex = function(nums) {
+    for (let pivot = 0; pivot < nums.length; pivot++) {
+        let left = 0, right = 0;
+        // left side of pivot
+        for (let index = 0; index < pivot; index++) {
+            left += nums[index];
+        }
+        // right side of pivot
+        for (let index = pivot + 1; index < nums.length; index++) {
+            right += nums[index];
+        }
+        if (left === right) return pivot;
+    }
+    return -1;
+};

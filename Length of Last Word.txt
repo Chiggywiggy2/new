@@ -1,0 +1,20 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function(s) {
+
+    var words = s.split(" ");
+    //console.log(words);
+
+    var arr = [];
+
+    for (var i = 0; i < words.length; i++) {
+        if (words[i] != "") {
+            arr.push(words[i]);
+        }
+    }
+    //console.log(arr);
+
+    return arr[arr.length - 1].length;
+};

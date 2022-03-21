@@ -1,0 +1,63 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var minMoves2 = function(nums) {
+        var num1;
+    var count = [];
+    var count2 = 0;
+
+    for (var i = 0; i < nums.length; i++) {
+        num1 = nums[i];
+        for (var j = 0; j < nums.length; j++) {
+            if (num1 == nums[j]) {
+                continue;
+            }
+            else {
+                var a = Math.abs(num1 - nums[j]);
+                count2 += a;
+            }
+        }
+
+        count.push(count2);
+        count2 = 0;
+    }
+
+    count.sort((a, b) => a - b);
+
+    return count[0];
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// OR -------------------------
+
+var minMoves2 = function (nums) {
+
+
+    nums.sort((a, b) => a - b);
+    console.log(nums);
+    let sum = 0;
+    let mid = Math.floor(nums.length / 2);
+    for (num of nums) {
+        sum += Math.abs(nums[mid] - num);
+    }
+    return sum;
+
+
+};
+
